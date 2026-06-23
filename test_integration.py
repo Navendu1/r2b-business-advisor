@@ -17,6 +17,17 @@ from pathlib import Path
 from dataclasses import dataclass, asdict
 from typing import List, Dict, Any, Optional
 
+# Ensure stdout/stderr use UTF-8 to avoid encoding errors on Windows
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    # Fallback: set PYTHONIOENCODING if reconfigure isn't available
+    try:
+        import os
+        os.environ.setdefault("PYTHONIOENCODING", "utf-8")
+    except Exception:
+        pass
 
 @dataclass
 class TestCase:
