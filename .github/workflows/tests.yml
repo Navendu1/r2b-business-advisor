@@ -1,0 +1,47 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyyaml
+    
+    - name: Run integration tests
+      run: |
+        python test_integration.py
+    
+    - name: Test with sample profile
+      run: |
+        python orchestrator.py profiles/alice_profile.yaml
+    
+    - name: Verify output files
+      run: |
+        python -c "
+        import json
+        import os
+        # Check that output files were created
+        output_files = [f for f in os.listdir('output') if f.endswith(('.json', '.csv', '.md', '.yaml'))]
+        assert len(output_files) > 0, 'No output files generated'
+        print(f'✓ Generated {len(output_files)} output files')
+        "

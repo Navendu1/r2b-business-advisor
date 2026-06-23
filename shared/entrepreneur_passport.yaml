@@ -1,0 +1,101 @@
+# Entrepreneur Passport: Shared State Ledger
+# This file is the single source of truth for all agents
+# NO agent operates from conversational memory alone; all critical data lives here
+
+# ============================================================================
+# SECTION 1: DEMOGRAPHIC PROFILE
+# ============================================================================
+entrepreneur:
+  name: "Jordan Chen"
+  age: 28
+  background: "Software Engineer with ML specialization"
+  years_of_experience: 5
+  location:
+    city: "Austin"
+    state: "TX"
+    country: "USA"
+  time_availability_hours_per_week: 40  # Full-time commitment
+
+# ============================================================================
+# SECTION 2: FINANCIAL CONSTRAINTS (THE HARD GATE)
+# ============================================================================
+capital:
+  available_investment_usd: 5000
+  currency: "USD"
+  funding_stage: "bootstrap"
+  willing_to_seek_external_funding: false
+  monthly_burn_rate_tolerance_usd: 500
+
+# ============================================================================
+# SECTION 3: CORE CAPABILITIES & ASSETS
+# ============================================================================
+capabilities:
+  technical_skills:
+    - "Python (expert)"
+    - "Machine Learning (advanced)"
+    - "Full-stack web development"
+    - "Cloud infrastructure (AWS)"
+  business_skills:
+    - "Product management"
+    - "Data analysis"
+  languages: ["English", "Mandarin"]
+  existing_assets:
+    - "Custom ML model trained on agricultural datasets"
+    - "Network of 50+ agricultural contacts"
+    - "Laptop and basic development infrastructure"
+
+# ============================================================================
+# SECTION 4: CONSTRAINT MATRIX (Locked by Profile Auditor)
+# ============================================================================
+constraints:
+  geographic_limitations:
+    - "Cannot relocate from Texas for 18 months"
+    - "Must serve North American market initially"
+  sector_restrictions:
+    - "No hardware manufacturing (too capital-intensive)"
+    - "No regulated pharmaceuticals"
+  time_constraints:
+    - "Cannot quit current job until Month 6 runway achieved"
+  skill_gaps:
+    - "No sales/business development experience"
+    - "Limited fundraising experience"
+
+# ============================================================================
+# SECTION 5: SELECTED BUSINESS PATHWAY (Locked by Market Arbitrator)
+# ============================================================================
+selected_pathway: null
+# Will be filled by system with ONE chosen idea from horizon scan
+# Format: "idea_id_001" → references the idea that survived all 7 agents
+
+# ============================================================================
+# SECTION 6: DPR LOCKFILE (Finalized by DPR Compiler)
+# ============================================================================
+dpr_lockfile:
+  status: "PENDING"  # States: PENDING | IN_PROGRESS | COMPLETED | REJECTED
+  idea_id: null
+  idea_name: null
+  dpr_version: "0.0"
+  generated_timestamp: null
+  validation_gates_passed: []
+  validation_gates_failed: []
+  
+  # Key metrics that must survive hard gates
+  estimated_startup_cost_usd: null
+  estimated_12_month_revenue_usd: null
+  estimated_time_to_market_months: null
+  regulatory_risks: []
+  mitigation_strategies: []
+
+# ============================================================================
+# SECTION 7: AUDIT LOG (Immutable Record of Decisions)
+# ============================================================================
+audit_log:
+  passport_created_timestamp: "2026-06-18T14:00:00Z"
+  last_modified_timestamp: "2026-06-18T14:00:00Z"
+  agents_completed: []
+  # Format: ["1_profile_auditor", "2_horizon_scanner", ...]
+  decisions_made:
+    - timestamp: "2026-06-18T14:00:00Z"
+      agent: "profile_auditor"
+      decision: "Profile locked and validated"
+      notes: "All constraints parsed and accepted"

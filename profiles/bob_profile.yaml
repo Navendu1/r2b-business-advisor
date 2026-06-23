@@ -1,0 +1,29 @@
+constraints:
+  available_capital_usd: 2000
+  can_relocate: false
+  has_technical_cofounder: false
+  non_compete: true
+  non_compete_duration_months: 6
+  skills:
+  - GTM
+  - Sales
+  - Content Marketing
+  timezone: US/Central
+  visa_status: US Citizen
+  weekly_hours_available: 15
+founder:
+  background: Marketing Manager at mid-size SaaS startup
+  founder_type: Non-technical co-founder
+  location: Rural Texas (outside major metro)
+  name: Bob Martinez
+session_metadata:
+  description: Non-technical solo founder with tight budget and non-compete. Should
+    get service-based ideas (consulting, done-for-you) avoiding tech products.
+  test_case: bob
+validation:
+  expected_gates:
+    budget: BORDERLINE
+    legal: BLOCKED
+    location: PASS
+    market: PASS
+  expected_ideas: 3

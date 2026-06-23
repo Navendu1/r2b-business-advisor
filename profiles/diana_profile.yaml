@@ -1,0 +1,31 @@
+constraints:
+  available_capital_usd: 8000
+  can_relocate: true
+  non_compete: false
+  previous_exits: 1
+  revenue_target_usd_annual: 50000
+  skills:
+  - Product strategy
+  - No-code tools
+  - Growth marketing
+  - Design thinking
+  timezone: US/Mountain
+  visa_status: US Citizen
+  weekly_hours_available: 35
+founder:
+  background: Product Manager + part-time indie maker
+  founder_type: Experienced solopreneur
+  location: Denver, CO
+  name: Diana Kowalski
+session_metadata:
+  description: Experienced solopreneur with adequate capital, deep product skills,
+    no constraints. Should get broadest idea portfolio (SaaS, content, tools) with
+    highest complexity tolerance.
+  test_case: diana
+validation:
+  expected_gates:
+    budget: PASS
+    legal: CLEAR
+    location: PASS
+    market: PASS
+  expected_ideas: 7

@@ -1,0 +1,7 @@
+* @your-username/maintainers  # Core team
+
+# Code ownership rules
+docs/**                     @your-username/docs-team
+agents/**                   @your-username/agents-team
+scripts/**                  @your-username/infra-team
+profiles/**                 @your-username/qa-team

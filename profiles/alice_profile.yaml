@@ -1,0 +1,28 @@
+constraints:
+  available_capital_usd: 5000
+  can_relocate: false
+  non_compete: false
+  skills:
+  - Python
+  - PyTorch
+  - Kubernetes
+  - GCP
+  timezone: US/Central
+  visa_status: H1B (sponsored by previous employer)
+  weekly_hours_available: 20
+founder:
+  background: ML Engineer at FAANG
+  founder_type: Technical co-founder
+  location: Austin, TX
+  name: Alice Chen
+session_metadata:
+  description: Technical founder with limited capital, H1B visa, strong skills. Should
+    get AI/ML-focused ideas with concerns about legal blockers.
+  test_case: alice
+validation:
+  expected_gates:
+    budget: PASS
+    legal: FLAGGED
+    location: PASS
+    market: PASS
+  expected_ideas: 5

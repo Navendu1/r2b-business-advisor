@@ -1,0 +1,29 @@
+constraints:
+  available_capital_usd: 1500
+  can_relocate: false
+  local_market_knowledge: Logtech, Agritech, SMB ops
+  non_compete: false
+  skills:
+  - Supply chain
+  - Inventory management
+  - Vendor relations
+  timezone: Africa/Lagos
+  visa_status: Nigerian citizen (no work visa)
+  weekly_hours_available: 25
+founder:
+  background: Operations manager at e-commerce company
+  founder_type: Domain expert
+  location: Lagos, Nigeria
+  name: Charlie Okonkwo
+session_metadata:
+  description: Domain expert from emerging market with deep local knowledge. Should
+    get localized ideas addressing African SMB pain points; legal gate flags payment/compliance
+    concerns.
+  test_case: charlie
+validation:
+  expected_gates:
+    budget: PASS
+    legal: FLAGGED
+    location: PASS
+    market: PASS
+  expected_ideas: 4
