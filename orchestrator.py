@@ -29,6 +29,11 @@ from pathlib import Path
 from datetime import datetime
 from typing import Dict, Any, Optional, Tuple
 
+# Ensure Unicode prints work on Windows CI
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 class R2BOrchestrator:
     """Orchestrates the complete R2B venture validation pipeline."""
@@ -401,7 +406,7 @@ Examples:
         sys.exit(0 if success else 1)
     
     except Exception as e:
-        print(f"\n❌ Fatal error: {e}")
+        print(f"\nFatal error: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(2)
